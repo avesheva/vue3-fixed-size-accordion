@@ -1,6 +1,14 @@
 {
-  "name": "vue3-fixed-size-accordion",
+  "name": "vue-fixed-size-accordion",
   "version": "1.0.0",
+  "main": "dist/vue-fixed-size-accordion.umd.js",
+  "module": "dist/vue-fixed-size-accordion.es.js",
+  "exports": {
+    "import": "./dist/vue-fixed-size-accordion.es.js",
+    "require": "./dist/vue-fixed-size-accordion.umd.js",
+    "dist/style.css": "./dist/style.css"
+  },
+  "files": ["dist"],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +19,7 @@
     "vue": "^3.2.41"
   },
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
