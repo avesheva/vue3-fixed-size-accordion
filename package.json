@@ -1,12 +1,23 @@
 {
   "name": "vue-fixed-size-accordion",
   "version": "1.0.0",
+  "description": "Vue3 accordion panel with stable height",
+  "homepage": "https://github.com/avesheva/vue3-fixed-size-accordion",
+  "author": "Andrii Shevchenko <shevchenkoandrii.dev@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "collapsible panel",
+    "accordion",
+    "vue",
+    "vue3",
+    "javascript"
+  ],
+  "private": false,
   "main": "dist/vue-fixed-size-accordion.umd.js",
   "module": "dist/vue-fixed-size-accordion.es.js",
   "exports": {
     "import": "./dist/vue-fixed-size-accordion.es.js",
-    "require": "./dist/vue-fixed-size-accordion.umd.js",
-    "dist/style.css": "./dist/style.css"
+    "require": "./dist/vue-fixed-size-accordion.umd.js"
   },
   "files": ["dist"],
   "type": "module",
@@ -15,14 +26,16 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "vue": "^3.2.41"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
-    "vue-tsc": "^1.0.9"
+    "vue-tsc": "^1.0.9",
+    "vue": "^3.2.41"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.41"
   }
 }
