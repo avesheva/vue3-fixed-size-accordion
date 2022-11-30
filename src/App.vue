@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <fixed-size-accordion :open="isOpened" content-block-id="listWrapper" class="slide-block">
+    <fixed-size-accordion :open="isOpened" animated class="slide-block">
       <template v-slot:topBar>
         <div class="header">
           <div>
@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import FixedSizeAccordion from './components/FixedSizeAccordion.vue'
+import FixedSizeAccordion from '../lib/index.ts'
 
 const isOpened = ref<boolean>(false)
 
@@ -50,14 +50,12 @@ const isOpened = ref<boolean>(false)
   justify-content: space-between;
   align-items: center;
 }
-
 .container {
   width: 500px;
 }
 button {
   margin-bottom: 1rem;
 }
-
 .slide-block {
   border: solid 1px;
 }
