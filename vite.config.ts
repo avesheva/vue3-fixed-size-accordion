@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: path.resolve(__dirname, 'lib/index.ts'),
       name: 'vue-fixed-size-accordion',
       fileName: format => `vue-fixed-size-accordion.${ format }.js`
     },
