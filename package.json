@@ -1,6 +1,6 @@
 {
   "name": "vue-fixed-size-accordion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue3 accordion panel with stable height",
   "homepage": "https://github.com/avesheva/vue3-fixed-size-accordion",
   "author": "Andrii Shevchenko <shevchenkoandrii.dev@gmail.com>",
@@ -10,7 +10,8 @@
     "accordion",
     "vue",
     "vue3",
-    "javascript"
+    "javascript",
+    "typescript"
   ],
   "private": false,
   "main": "dist/vue-fixed-size-accordion.umd.js",
@@ -21,9 +22,10 @@
   },
   "files": ["dist"],
   "type": "module",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview"
   },
   "dependencies": {},
