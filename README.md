@@ -31,19 +31,17 @@ export default {
 
 ## How to use
 ```vue
-    <vue-fixed-size-accordion :open="isOpened" animated>
+    <fixed-size-accordion :open="isOpened" animated>
       <template v-slot:topBar>
         <div>
-          <div>
-            <div class="visible-header">
-              <h3>This is the list header, for example</h3>
-              <button @click="isOpened = !isOpened">
-                {{ isOpened ? 'Close' : 'Open' }}
-              </button>
-            </div>
-            <div v-if="isOpened">
-              <p>This is hidden block. There are could be list filters, info block or any what you want.</p>
-            </div>
+          <div class="visible-header">
+            <h3>This is the list header, for example</h3>
+            <button @click="isOpened = !isOpened">
+              {{ isOpened ? 'Close' : 'Open' }}
+            </button>
+          </div>
+          <div v-if="isOpened">
+            <p>This is hidden block. There are could be list filters, info block or any what you want.</p>
           </div>
         </div>
       </template>
@@ -55,7 +53,7 @@ export default {
           </div>
         </div>
       </template>
-    </vue-fixed-size-accordion>
+    </fixed-size-accordion>
 ```
 __NOTE: topBar slot should have one child__
 
