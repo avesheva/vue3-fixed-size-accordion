@@ -20,7 +20,9 @@
     "import": "./dist/vue-fixed-size-accordion.es.js",
     "require": "./dist/vue-fixed-size-accordion.umd.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -28,14 +30,35 @@
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview"
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "vue",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest",
+      ".*\\.(vue)$": "@vue/vue3-jest"
+    },
+    "testEnvironment": "jsdom",
+    "testEnvironmentOptions": {
+      "customExportConditions": ["node", "node-addons"]
+    }
+  },
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^29.2.3",
     "@types/node": "^18.11.9",
     "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/test-utils": "^2.2.4",
+    "@vue/vue3-jest": "^29.2.1",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",
-    "vue-tsc": "^1.0.9",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue-tsc": "^1.0.9"
   },
   "peerDependencies": {
     "vue": "^3.2.41"
