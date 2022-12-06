@@ -30,7 +30,7 @@
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "test": "jest",
-    "lint": "eslint lib --ext .ts,.vue"
+    "lint": "eslint lib src tests --ext .ts,.vue"
   },
   "dependencies": {},
   "devDependencies": {
