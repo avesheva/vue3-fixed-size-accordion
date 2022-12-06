@@ -8,7 +8,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'lib/index.ts'),
       name: 'vue-fixed-size-accordion',
-      fileName: format => `vue-fixed-size-accordion.${ format }.js`
+      fileName: format => `vue-fixed-size-accordion.${ format }.js`,
     },
     rollupOptions: {
       external: ['vue'],

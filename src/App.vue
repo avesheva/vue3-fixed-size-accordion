@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <fixed-size-accordion :open="isOpened" animated class="slide-block">
-      <template v-slot:topBar>
+    <fixed-size-accordion
+      :open="isOpened"
+      animated
+      class="slide-block"
+    >
+      <template #topBar>
         <div class="header">
           <div>
             <div class="visible-header">
@@ -20,16 +24,19 @@
           </div>
         </div>
       </template>
-      <template v-slot:bottomBar>
+      <template #bottomBar>
         <div id="listWrapper">
-          <div v-for="number in 5" class="item" :key="number">
+          <div
+            v-for="number in 5"
+            class="item"
+            :key="number"
+          >
             Item: {{ number }}
           </div>
         </div>
       </template>
     </fixed-size-accordion>
   </div>
-
 </template>
 
 <script setup lang="ts">

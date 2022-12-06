@@ -48,7 +48,7 @@ onMounted(() => {
   const bottomBar: HTMLElement | null = document.getElementById('fsaBottomBar')
 
   if (topBar && bottomBar) {
-    if(props.animated) {
+    if (props.animated) {
       topBar.style.transition = 'height 500ms ease'
       bottomBar.style.transition = 'height 500ms ease'
     }
@@ -64,10 +64,16 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <div id="fsaTopBar" style="overflow: hidden">
+    <div
+      id="fsaTopBar"
+      style="overflow: hidden"
+    >
       <slot name="topBar" />
     </div>
-    <div id="fsaBottomBar" style="overflow-y: auto">
+    <div
+      id="fsaBottomBar"
+      style="overflow-y: auto"
+    >
       <slot name="bottomBar" />
     </div>
   </div>
