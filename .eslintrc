@@ -7,7 +7,7 @@
   },
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.linter.json"
   },
   "rules": {
     "@typescript-eslint/semi": [2, "never"],
