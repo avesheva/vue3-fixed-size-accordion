@@ -30,7 +30,8 @@
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "test": "jest",
-    "lint": "eslint lib src tests --ext .ts,.vue"
+    "lint": "eslint lib src tests --ext .ts,.vue",
+    "prepare": "husky install"
   },
   "dependencies": {},
   "devDependencies": {
@@ -44,9 +45,9 @@
     "@vue/vue3-jest": "^29.2.1",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.2",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "ts-jest": "^29.0.3",
