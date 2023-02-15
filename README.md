@@ -58,8 +58,8 @@ export default {
 __NOTE: topBar slot should have one child__
 
 ## Props
-| NAME     | TYPE    | REQUIRED |
-|----------|---------|----------|
-| open     | Boolean |:heavy_check_mark:   
-| animated | Boolean |          |
-
+| NAME         | TYPE      | DESCRIPTION       |
+|--------------|-----------|-------------------|
+| open         | Boolean   | Required. Whether hidden block in opened or closed state |   
+| animated?    | Boolean   | Should apply animation to sliding or not                 |
+| bottomBarId? | String    | By default the component uses **fsaBottomBar** id for bottom bar size calculation. You can add **id** attribute to your bottom bar content, and set this **id** as **bottomBarId** prop. Size calculation will be applied to element with your **id**. | 
