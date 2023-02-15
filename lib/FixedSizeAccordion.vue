@@ -4,6 +4,7 @@ import { onMounted, onUnmounted } from 'vue'
 const props = defineProps<{
   open: boolean,
   animated?: boolean,
+  bottomBarId?: string,
 }>()
 
 let observerInstance: ResizeObserver | null = null
@@ -45,7 +46,7 @@ const heightCalculation = (topBar: HTMLElement, bottomBar: HTMLElement): ResizeO
 
 onMounted(() => {
   const topBar: HTMLElement | null = document.getElementById('fsaTopBar')
-  const bottomBar: HTMLElement | null = document.getElementById('fsaBottomBar')
+  const bottomBar: HTMLElement | null = document.getElementById(props.bottomBarId || 'fsaBottomBar')
 
   if (topBar && bottomBar) {
     if (props.animated) {
