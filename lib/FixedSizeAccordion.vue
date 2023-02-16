@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 
-const props = defineProps<{
+export interface IProps {
   open: boolean,
-  animated?: boolean,
+  animationDuration?: number,
+  topBarId?: string,
   bottomBarId?: string,
-}>()
+  bottomBarContentId?: string,
+}
+
+const props = withDefaults(defineProps<IProps>(), {
+  animated: false,
+  animationDuration: 0,
+  topBarId: 'fsaTopBar',
+  bottomBarId: 'fsaBottomBar',
+  bottomBarContentId: '',
+})
 
 let observerInstance: ResizeObserver | null = null
 
@@ -45,14 +55,12 @@ const heightCalculation = (topBar: HTMLElement, bottomBar: HTMLElement): ResizeO
 }
 
 onMounted(() => {
-  const topBar: HTMLElement | null = document.getElementById('fsaTopBar')
-  const bottomBar: HTMLElement | null = document.getElementById(props.bottomBarId || 'fsaBottomBar')
+  const topBar: HTMLElement | null = document.getElementById(props.topBarId)
+  const bottomBar: HTMLElement | null = document.getElementById(props.bottomBarContentId || props.bottomBarId)
 
   if (topBar && bottomBar) {
-    if (props.animated) {
-      topBar.style.transition = 'height 500ms ease'
-      bottomBar.style.transition = 'height 500ms ease'
-    }
+    topBar.style.transition = `height ${ props.animationDuration }ms ease`
+    bottomBar.style.transition = `height ${ props.animationDuration }ms ease`
 
     observerInstance = heightCalculation(topBar, bottomBar)
   }
@@ -66,13 +74,13 @@ onUnmounted(() => {
 <template>
   <div>
     <div
-      id="fsaTopBar"
+      :id="topBarId"
       style="overflow: hidden"
     >
       <slot name="topBar" />
     </div>
     <div
-      id="fsaBottomBar"
+      :id="bottomBarId"
       style="overflow-y: auto"
     >
       <slot name="bottomBar" />
