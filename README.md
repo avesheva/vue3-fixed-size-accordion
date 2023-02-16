@@ -15,6 +15,15 @@ npm install vue-fixed-size-accordion
 yarn add vue-fixed-size-accordion
 ```
 
+## Slots
+```javascript
+#topBar // Here you can place list header with hidden filters block, as in video example
+
+#bottomBar // Main content. Here you can place list items.
+```
+
+## 
+
 ## Getting Started
 ### Import component
 ```javascript
@@ -31,7 +40,7 @@ export default {
 
 ## How to use
 ```vue
-    <fixed-size-accordion :open="isOpened" animated>
+    <fixed-size-accordion :open="isOpened" :animation-duration="500">
       <template v-slot:topBar>
         <div>
           <div class="visible-header">
@@ -58,8 +67,11 @@ export default {
 __NOTE: topBar slot should have one child__
 
 ## Props
-| NAME         | TYPE      | DESCRIPTION       |
-|--------------|-----------|-------------------|
-| open         | Boolean   | Required. Whether hidden block in opened or closed state |   
-| animated?    | Boolean   | Should apply animation to sliding or not                 |
-| bottomBarId? | String    | By default the component uses **fsaBottomBar** id for bottom bar size calculation. You can add **id** attribute to your bottom bar content, and set this **id** as **bottomBarId** prop. Size calculation will be applied to element with your **id**. | 
+| NAME                    | TYPE      | DEFAULT      |  DESCRIPTION                                                                                   |
+|-------------------------|-----------|--------------|------------------------------------------------------------------------------------------------|
+| open                    | Boolean   |    -         | Required. Whether hidden block in opened or closed state                                       |   
+| animationDuration? (ms) | Number    |    0         | Set sliding animation duration. Animation not applying, if value **0**                         |
+| topBarId?               | String    | fsaTopBar    | **topBar** slot wrapper **id**                                                                 |  
+| bottomBarId?            | String    | fsaBottomBar | **bottomBar** slot wrapper **id**                                                              |
+| bottomBarContentId?     | String    | " "          | By default bottom bar height calculations performing on block with **bottomBarId**. You can add your component with **id** to bottom bar and pass that **id** as a prop - calculations will perform on that component |
+
