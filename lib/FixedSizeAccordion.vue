@@ -2,7 +2,6 @@
 import { onMounted, onUnmounted } from 'vue'
 
 export interface IProps {
-  open: boolean,
   animationDuration?: number,
   topBarId?: string,
   bottomBarId?: string,
@@ -10,7 +9,6 @@ export interface IProps {
 }
 
 const props = withDefaults(defineProps<IProps>(), {
-  animated: false,
   animationDuration: 0,
   topBarId: 'fsaTopBar',
   bottomBarId: 'fsaBottomBar',
@@ -27,26 +25,18 @@ const heightCalculation = (topBar: HTMLElement, bottomBar: HTMLElement): ResizeO
   const topBarInitialHeight: number = topBarContent.offsetHeight
   const scrollBlockInitialHeight: number = bottomBar.offsetHeight
 
-  let finishedTopBarBlockHeight = topBarInitialHeight
-  let finishedContentBlockHeight = scrollBlockInitialHeight
+  const finishedTopBarBlockHeight = topBarInitialHeight
+  const finishedContentBlockHeight = scrollBlockInitialHeight
 
   topBar.style.height = `${ topBarInitialHeight }px`
   bottomBar.style.height = `${ scrollBlockInitialHeight }px`
 
   const observer = new ResizeObserver((entries: ResizeObserverEntry[]) => {
-    if (props.open) {
-      finishedTopBarBlockHeight = entries[0].borderBoxSize[0].blockSize
-      finishedContentBlockHeight = scrollBlockInitialHeight - (finishedTopBarBlockHeight - topBarInitialHeight)
+    const x = entries[0].borderBoxSize[0].blockSize
+    const y = finishedTopBarBlockHeight - x
 
-      topBar.style.height = `${ Math.round(finishedTopBarBlockHeight) }px`
-      bottomBar.style.height = `${ Math.round(finishedContentBlockHeight) }px`
-    } else {
-      const x = entries[0].borderBoxSize[0].blockSize
-      const y = finishedTopBarBlockHeight - x
-
-      topBar.style.height = `${ Math.round(x) }px`
-      bottomBar.style.height = `${ Math.round(finishedContentBlockHeight + y) }px`
-    }
+    topBar.style.height = `${ Math.round(x) }px`
+    bottomBar.style.height = `${ Math.round(finishedContentBlockHeight + y) }px`
   })
 
   observer.observe(topBarContent)
