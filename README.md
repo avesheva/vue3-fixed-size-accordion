@@ -68,8 +68,7 @@ __NOTE: topBar slot should have one child__
 
 ## Props
 | NAME                    | TYPE      | DEFAULT      |  DESCRIPTION                                                                                   |
-|-------------------------|-----------|--------------|------------------------------------------------------------------------------------------------|
-| open                    | Boolean   |    -         | Required. Whether hidden block in opened or closed state                                       |   
+|-------------------------|-----------|--------------|------------------------------------------------------------------------------------------------|   
 | animationDuration? (ms) | Number    |    0         | Set sliding animation duration. Animation not applying, if value **0**                         |
 | topBarId?               | String    | fsaTopBar    | **topBar** slot wrapper **id**                                                                 |  
 | bottomBarId?            | String    | fsaBottomBar | **bottomBar** slot wrapper **id**                                                              |
